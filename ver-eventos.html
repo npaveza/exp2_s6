@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Festividades Locales</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="ver-eventos">
+    <!-- Header con logo y menú de navegación -->
+    <header>
+        <div id="navbar"></div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Festividades Locales</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item" id="menuInicio">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item" id="menuEventos">
+                            <a class="nav-link" href="ver-eventos.html">Eventos</a>
+                        </li>
+                        <li class="nav-item logged-out" id="menuLogin">
+                            <a class="nav-link" href="login.html">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item logged-out" id="menuRegistro">
+                            <a class="nav-link" href="registro.html">Registrarse</a>
+                        </li>
+                        <li class="nav-item logged-in organizador" id="menuAgregarEvento" style="display: none;">
+                            <a class="nav-link" href="agregar-evento.html">Agregar Evento</a>
+                        </li>
+                        <li class="nav-item logged-in" id="menuLogout" style="display: none;">
+                            <a class="nav-link" href="#" onclick="logout()">Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        </header>
+
+    <!-- Contenido principal -->
+    <div class="container mt-4">
+        <h2 class="mb-4">Eventos y Celebraciones</h2>
+        <div class="row" id="eventos-container">
+            <!-- Los eventos se cargarán dinámicamente aquí -->
+        </div>
+    </div>
+
+    <!-- Modal para comentarios -->
+<div class="modal fade" id="comentariosModal" tabindex="-1" aria-labelledby="comentariosModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="comentariosModalLabel">Detalles del Evento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Lugar:</strong> <span id="comentariosModalLugar"></span></p>
+                <p><strong>Fecha:</strong> <span id="comentariosModalFecha"></span></p>
+                <p><strong>Hora:</strong> <span id="comentariosModalHora"></span></p>
+                
+                <h6>Comentarios:</h6>
+                <div id="comentarios-lista" class="mb-3">
+                    <!-- Aquí se mostrarán los comentarios existentes -->
+                </div>
+
+                <form id="comentarioForm">
+                    <div class="mb-3">
+                        <label for="comentario" class="form-label">Nuevo Comentario</label>
+                        <textarea class="form-control" id="comentario" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Comentario</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        <p>&copy; 2024 Festividades Locales. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="js/auth.js" defer></script>-->
+    <script src="js/eventos.js" defer></script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>
